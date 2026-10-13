@@ -1,0 +1,586 @@
+{
+  "seed": 20261013,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "portfolio_count": 32768,
+  "feasible_count": 1749,
+  "pareto_count": 30,
+  "institutional_feasible_count": 133,
+  "excluded_project_ids": [
+    "S01",
+    "S05",
+    "S08",
+    "S10",
+    "S13"
+  ],
+  "constraints": {
+    "budget": 300.0,
+    "carbon_floor": 42.0,
+    "resilience_floor": 13.0
+  },
+  "normalization": {
+    "lower": [
+      106.92,
+      42.0,
+      15.52
+    ],
+    "upper": [
+      220.8,
+      59.050000000000004,
+      31.26
+    ],
+    "rule": "s_k=(objective_k-lower_k)/(upper_k-lower_k). Bounds from initial feasible portfolios, fixed thereafter, no clipping."
+  },
+  "selection_tie_break": "Highest primary objective, highest mean satisfaction, highest financial satisfaction, then lowest integer portfolio mask.",
+  "regret_definition": "max(0, U_s_star - U_s_stale + lambda * V_s_stale), U=0.5*s_financial+0.3*s_carbon+0.2*s_resilience; V=sum normalized budget excess, carbon shortfall, resilience shortfall. lambda=1. Each shock is independently applied to the initial dataset.",
+  "static": {
+    "max_min": {
+      "mask": 2769,
+      "project_ids": [
+        "S01",
+        "S05",
+        "S07",
+        "S08",
+        "S10",
+        "S12"
+      ],
+      "capex": 300.0,
+      "npv": 196.37,
+      "carbon": 57.47,
+      "resilience": 27.009999999999998,
+      "satisfaction": [
+        0.7854759395855286,
+        0.9073313782991199,
+        0.7299872935196948
+      ],
+      "minimum_satisfaction": 0.7299872935196948,
+      "mean_satisfaction": 0.8075982038014478,
+      "pareto_distance": 0.0,
+      "institution_exclusions_selected": 4
+    },
+    "weighted": {
+      "mask": 2769,
+      "project_ids": [
+        "S01",
+        "S05",
+        "S07",
+        "S08",
+        "S10",
+        "S12"
+      ],
+      "capex": 300.0,
+      "npv": 196.37,
+      "carbon": 57.47,
+      "resilience": 27.009999999999998,
+      "satisfaction": [
+        0.7854759395855286,
+        0.9073313782991199,
+        0.7299872935196948
+      ],
+      "minimum_satisfaction": 0.7299872935196948,
+      "mean_satisfaction": 0.8075982038014478,
+      "pareto_distance": 0.0,
+      "institution_exclusions_selected": 4
+    },
+    "equal_weight": {
+      "mask": 8840,
+      "project_ids": [
+        "S04",
+        "S08",
+        "S10",
+        "S14"
+      ],
+      "capex": 296.0,
+      "npv": 180.69,
+      "carbon": 58.84,
+      "resilience": 30.18,
+      "satisfaction": [
+        0.6477871443624867,
+        0.987683284457478,
+        0.9313850063532401
+      ],
+      "minimum_satisfaction": 0.6477871443624867,
+      "mean_satisfaction": 0.8556184783910682,
+      "pareto_distance": 0.0,
+      "institution_exclusions_selected": 2
+    }
+  },
+  "institution": {
+    "max_min": {
+      "mask": 8460,
+      "project_ids": [
+        "S03",
+        "S04",
+        "S09",
+        "S14"
+      ],
+      "capex": 298.0,
+      "npv": 163.63,
+      "carbon": 51.42000000000001,
+      "resilience": 26.03,
+      "satisfaction": [
+        0.4979803301721109,
+        0.5524926686217012,
+        0.667725540025413
+      ],
+      "minimum_satisfaction": 0.4979803301721109,
+      "mean_satisfaction": 0.5727328462730751,
+      "pareto_distance": 0.0,
+      "institution_exclusions_selected": 0
+    },
+    "weighted": {
+      "mask": 10592,
+      "project_ids": [
+        "S06",
+        "S07",
+        "S09",
+        "S12",
+        "S14"
+      ],
+      "capex": 294.0,
+      "npv": 190.73000000000002,
+      "carbon": 48.52,
+      "resilience": 25.72,
+      "satisfaction": [
+        0.7359501229364244,
+        0.38240469208211153,
+        0.6480304955527317
+      ],
+      "minimum_satisfaction": 0.38240469208211153,
+      "mean_satisfaction": 0.5887951035237559,
+      "pareto_distance": 0.0,
+      "institution_exclusions_selected": 0
+    }
+  },
+  "weight_search": {
+    "named": {
+      "Reference": {
+        "weights": [
+          0.5,
+          0.3,
+          0.2
+        ],
+        "mask": 2769,
+        "project_ids": [
+          "S01",
+          "S05",
+          "S07",
+          "S08",
+          "S10",
+          "S12"
+        ],
+        "capex": 300.0,
+        "npv": 196.37,
+        "carbon": 57.47,
+        "resilience": 27.009999999999998,
+        "satisfaction": [
+          0.7854759395855286,
+          0.9073313782991199,
+          0.7299872935196948
+        ],
+        "minimum_satisfaction": 0.7299872935196948,
+        "mean_satisfaction": 0.8075982038014478,
+        "pareto_distance": 0.0,
+        "institution_exclusions_selected": 4
+      },
+      "Equal": {
+        "weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "mask": 8840,
+        "project_ids": [
+          "S04",
+          "S08",
+          "S10",
+          "S14"
+        ],
+        "capex": 296.0,
+        "npv": 180.69,
+        "carbon": 58.84,
+        "resilience": 30.18,
+        "satisfaction": [
+          0.6477871443624867,
+          0.987683284457478,
+          0.9313850063532401
+        ],
+        "minimum_satisfaction": 0.6477871443624867,
+        "mean_satisfaction": 0.8556184783910682,
+        "pareto_distance": 0.0,
+        "institution_exclusions_selected": 2
+      },
+      "Financial": {
+        "weights": [
+          0.7,
+          0.2,
+          0.1
+        ],
+        "mask": 737,
+        "project_ids": [
+          "S01",
+          "S06",
+          "S07",
+          "S08",
+          "S10"
+        ],
+        "capex": 298.0,
+        "npv": 208.88,
+        "carbon": 55.12,
+        "resilience": 24.55,
+        "satisfaction": [
+          0.8953284158763609,
+          0.7695014662756595,
+          0.5736975857687421
+        ],
+        "minimum_satisfaction": 0.5736975857687421,
+        "mean_satisfaction": 0.7461758226402542,
+        "pareto_distance": 0.0,
+        "institution_exclusions_selected": 3
+      },
+      "Carbon": {
+        "weights": [
+          0.2,
+          0.7,
+          0.1
+        ],
+        "mask": 8840,
+        "project_ids": [
+          "S04",
+          "S08",
+          "S10",
+          "S14"
+        ],
+        "capex": 296.0,
+        "npv": 180.69,
+        "carbon": 58.84,
+        "resilience": 30.18,
+        "satisfaction": [
+          0.6477871443624867,
+          0.987683284457478,
+          0.9313850063532401
+        ],
+        "minimum_satisfaction": 0.6477871443624867,
+        "mean_satisfaction": 0.8556184783910682,
+        "pareto_distance": 0.0,
+        "institution_exclusions_selected": 2
+      },
+      "Resilience": {
+        "weights": [
+          0.2,
+          0.1,
+          0.7
+        ],
+        "mask": 8728,
+        "project_ids": [
+          "S04",
+          "S05",
+          "S10",
+          "S14"
+        ],
+        "capex": 296.0,
+        "npv": 178.68,
+        "carbon": 57.120000000000005,
+        "resilience": 31.26,
+        "satisfaction": [
+          0.6301369863013698,
+          0.8868035190615836,
+          1.0
+        ],
+        "minimum_satisfaction": 0.6301369863013698,
+        "mean_satisfaction": 0.8389801684543178,
+        "pareto_distance": 0.0,
+        "institution_exclusions_selected": 2
+      }
+    },
+    "random": {
+      "count": 1000,
+      "seed": 20261014,
+      "distribution": "Dirichlet(1,1,1)",
+      "mean": 0.6098159263496393,
+      "p05": 0.20997067448680337,
+      "p95": 0.7299872935196948,
+      "maximum": 0.7299872935196948
+    },
+    "grid": {
+      "count": 5151,
+      "step": 0.01,
+      "maximum": 0.7299872935196948
+    }
+  },
+  "scenarios": [
+    {
+      "name": "Battery cost decline",
+      "transformation": "Reduce battery CapEx by 25%; hold NPV and other attributes fixed.",
+      "affected_project_ids": [
+        "S02",
+        "S08",
+        "S14"
+      ],
+      "max_min_days": 2,
+      "weighted_days": 12,
+      "carbon_floor": 42.0,
+      "reference_optimum_ids": [
+        "S05",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S14"
+      ],
+      "daily_regret": {
+        "max_min": 0.27050721658469845,
+        "weighted": 0.27050721658469845,
+        "equal_weight": 0.27496649978200294
+      },
+      "cumulative_loss": {
+        "max_min": 0.5410144331693969,
+        "weighted": 3.2460865990163814,
+        "equal_weight": 0.5499329995640059
+      },
+      "penalty_sensitivity_regrets": {
+        "0": {
+          "max_min": 0.27050721658469845,
+          "weighted": 0.27050721658469845,
+          "equal_weight": 0.27496649978200294
+        },
+        "0.25": {
+          "max_min": 0.27050721658469845,
+          "weighted": 0.27050721658469845,
+          "equal_weight": 0.27496649978200294
+        },
+        "0.5": {
+          "max_min": 0.27050721658469845,
+          "weighted": 0.27050721658469845,
+          "equal_weight": 0.27496649978200294
+        },
+        "0.75": {
+          "max_min": 0.27050721658469845,
+          "weighted": 0.27050721658469845,
+          "equal_weight": 0.27496649978200294
+        },
+        "1": {
+          "max_min": 0.27050721658469845,
+          "weighted": 0.27050721658469845,
+          "equal_weight": 0.27496649978200294
+        }
+      }
+    },
+    {
+      "name": "Carbon target tightening",
+      "transformation": "Increase portfolio carbon floor from 42 to 50.",
+      "affected_project_ids": [],
+      "max_min_days": 3,
+      "weighted_days": 18,
+      "carbon_floor": 50.0,
+      "reference_optimum_ids": [
+        "S01",
+        "S05",
+        "S07",
+        "S08",
+        "S10",
+        "S12"
+      ],
+      "daily_regret": {
+        "max_min": 0.0,
+        "weighted": 0.0,
+        "equal_weight": 0.004459283197304487
+      },
+      "cumulative_loss": {
+        "max_min": 0.0,
+        "weighted": 0.0,
+        "equal_weight": 0.01337784959191346
+      },
+      "penalty_sensitivity_regrets": {
+        "0": {
+          "max_min": 0.0,
+          "weighted": 0.0,
+          "equal_weight": 0.004459283197304487
+        },
+        "0.25": {
+          "max_min": 0.0,
+          "weighted": 0.0,
+          "equal_weight": 0.004459283197304487
+        },
+        "0.5": {
+          "max_min": 0.0,
+          "weighted": 0.0,
+          "equal_weight": 0.004459283197304487
+        },
+        "0.75": {
+          "max_min": 0.0,
+          "weighted": 0.0,
+          "equal_weight": 0.004459283197304487
+        },
+        "1": {
+          "max_min": 0.0,
+          "weighted": 0.0,
+          "equal_weight": 0.004459283197304487
+        }
+      }
+    },
+    {
+      "name": "PPA basis shock",
+      "transformation": "Reduce PPA NPV by 30%; hold all other attributes fixed.",
+      "affected_project_ids": [
+        "S05",
+        "S11"
+      ],
+      "max_min_days": 2,
+      "weighted_days": 14,
+      "carbon_floor": 42.0,
+      "reference_optimum_ids": [
+        "S04",
+        "S08",
+        "S10",
+        "S14"
+      ],
+      "daily_regret": {
+        "max_min": 0.030024383820609346,
+        "weighted": 0.030024383820609346,
+        "equal_weight": 0.0
+      },
+      "cumulative_loss": {
+        "max_min": 0.06004876764121869,
+        "weighted": 0.42034137348853085,
+        "equal_weight": 0.0
+      },
+      "penalty_sensitivity_regrets": {
+        "0": {
+          "max_min": 0.030024383820609346,
+          "weighted": 0.030024383820609346,
+          "equal_weight": 0.0
+        },
+        "0.25": {
+          "max_min": 0.030024383820609346,
+          "weighted": 0.030024383820609346,
+          "equal_weight": 0.0
+        },
+        "0.5": {
+          "max_min": 0.030024383820609346,
+          "weighted": 0.030024383820609346,
+          "equal_weight": 0.0
+        },
+        "0.75": {
+          "max_min": 0.030024383820609346,
+          "weighted": 0.030024383820609346,
+          "equal_weight": 0.0
+        },
+        "1": {
+          "max_min": 0.030024383820609346,
+          "weighted": 0.030024383820609346,
+          "equal_weight": 0.0
+        }
+      }
+    },
+    {
+      "name": "Grid reliability shock",
+      "transformation": "Reduce resilience of Solar, Wind and PPA projects by 30%; hold other attributes fixed.",
+      "affected_project_ids": [
+        "S01",
+        "S04",
+        "S05",
+        "S07",
+        "S10",
+        "S11",
+        "S13"
+      ],
+      "max_min_days": 3,
+      "weighted_days": 15,
+      "carbon_floor": 42.0,
+      "reference_optimum_ids": [
+        "S01",
+        "S06",
+        "S07",
+        "S08",
+        "S10"
+      ],
+      "daily_regret": {
+        "max_min": 0.0027132238776410578,
+        "weighted": 0.0027132238776410578,
+        "equal_weight": 0.002674413046991342
+      },
+      "cumulative_loss": {
+        "max_min": 0.008139671632923173,
+        "weighted": 0.040698358164615867,
+        "equal_weight": 0.008023239140974026
+      },
+      "penalty_sensitivity_regrets": {
+        "0": {
+          "max_min": 0.0027132238776410578,
+          "weighted": 0.0027132238776410578,
+          "equal_weight": 0.002674413046991342
+        },
+        "0.25": {
+          "max_min": 0.0027132238776410578,
+          "weighted": 0.0027132238776410578,
+          "equal_weight": 0.002674413046991342
+        },
+        "0.5": {
+          "max_min": 0.0027132238776410578,
+          "weighted": 0.0027132238776410578,
+          "equal_weight": 0.002674413046991342
+        },
+        "0.75": {
+          "max_min": 0.0027132238776410578,
+          "weighted": 0.0027132238776410578,
+          "equal_weight": 0.002674413046991342
+        },
+        "1": {
+          "max_min": 0.0027132238776410578,
+          "weighted": 0.0027132238776410578,
+          "equal_weight": 0.002674413046991342
+        }
+      }
+    }
+  ],
+  "reference_loss": {
+    "max_min": 0.6092028724435388,
+    "weighted": 3.707126330669528,
+    "equal_weight": 0.5713340882968934
+  },
+  "equal_delay_loss": {
+    "max_min": 0.6092028724435388,
+    "weighted": 0.6092028724435388,
+    "equal_weight": 0.5713340882968934
+  },
+  "thirty_day_loss": {
+    "max_min": 9.097344728488466,
+    "weighted": 9.097344728488466,
+    "equal_weight": 8.463005880788963
+  },
+  "break_even_q": 1.0,
+  "penalty_sensitivity": {
+    "0": {
+      "max_min": 0.6092028724435388,
+      "weighted": 3.707126330669528,
+      "equal_weight": 0.5713340882968934
+    },
+    "0.25": {
+      "max_min": 0.6092028724435388,
+      "weighted": 3.707126330669528,
+      "equal_weight": 0.5713340882968934
+    },
+    "0.5": {
+      "max_min": 0.6092028724435388,
+      "weighted": 3.707126330669528,
+      "equal_weight": 0.5713340882968934
+    },
+    "0.75": {
+      "max_min": 0.6092028724435388,
+      "weighted": 3.707126330669528,
+      "equal_weight": 0.5713340882968934
+    },
+    "1": {
+      "max_min": 0.6092028724435388,
+      "weighted": 3.707126330669528,
+      "equal_weight": 0.5713340882968934
+    }
+  },
+  "checks": {
+    "binary_portfolios_enumerated": 32768,
+    "all_static_selected_portfolios_pareto_efficient": true,
+    "post_constraint_portfolios_exclude_long_german_commitments": true,
+    "max_min_objective_at_least_each_weighted_search_minimum": true
+  }
+}

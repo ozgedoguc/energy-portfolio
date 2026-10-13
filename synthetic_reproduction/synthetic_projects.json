@@ -1,0 +1,165 @@
+{
+  "provenance": "Fresh synthetic scenario generated for the manuscript revision. Not a recovery of the original data and not fitted to prior published aggregates.",
+  "seed": 20261013,
+  "generator": "numpy.random.default_rng; PCG64",
+  "generation": "Fixed technology/country lists. Per row draw CapEx as integer 25..90 inclusive, duration as integer 2..15 inclusive, then independent uniform multipliers for NPV (0.40..0.85), carbon (0.10..0.25), resilience (0.05..0.12). Round derived attributes to two decimal places.",
+  "units": {
+    "capex": "synthetic capital units (SCU)",
+    "npv": "SCU, assumed already discounted; no cash-flow model",
+    "carbon": "synthetic carbon-reduction score units; not measured tonnes",
+    "resilience": "synthetic resilience score units; not measured reliability"
+  },
+  "assumptions": "Binary independent projects, additive attributes, no dependencies, synergies, cash-flow model, or jurisdictional economic effects. Countries and durations are illustrative labels used only for the commitment boundary.",
+  "projects": [
+    {
+      "project_id": "S01",
+      "technology": "Solar",
+      "jurisdiction": "DE",
+      "commitment_years": 7,
+      "capex": 53,
+      "npv": 26.81,
+      "carbon": 10.72,
+      "resilience": 3.06
+    },
+    {
+      "project_id": "S02",
+      "technology": "Battery",
+      "jurisdiction": "FR",
+      "commitment_years": 12,
+      "capex": 77,
+      "npv": 44.1,
+      "carbon": 10.84,
+      "resilience": 4.29
+    },
+    {
+      "project_id": "S03",
+      "technology": "Efficiency",
+      "jurisdiction": "IT",
+      "commitment_years": 3,
+      "capex": 83,
+      "npv": 50.66,
+      "carbon": 10.56,
+      "resilience": 5.19
+    },
+    {
+      "project_id": "S04",
+      "technology": "Wind",
+      "jurisdiction": "ES",
+      "commitment_years": 13,
+      "capex": 84,
+      "npv": 37.3,
+      "carbon": 16.35,
+      "resilience": 9.33
+    },
+    {
+      "project_id": "S05",
+      "technology": "PPA",
+      "jurisdiction": "DE",
+      "commitment_years": 6,
+      "capex": 45,
+      "npv": 26.18,
+      "carbon": 9.24,
+      "resilience": 5.35
+    },
+    {
+      "project_id": "S06",
+      "technology": "Demand response",
+      "jurisdiction": "IT",
+      "commitment_years": 3,
+      "capex": 89,
+      "npv": 67.83,
+      "carbon": 13.0,
+      "resilience": 7.5
+    },
+    {
+      "project_id": "S07",
+      "technology": "Solar",
+      "jurisdiction": "FR",
+      "commitment_years": 6,
+      "capex": 28,
+      "npv": 18.09,
+      "carbon": 4.9,
+      "resilience": 2.1
+    },
+    {
+      "project_id": "S08",
+      "technology": "Battery",
+      "jurisdiction": "DE",
+      "commitment_years": 8,
+      "capex": 45,
+      "npv": 28.19,
+      "carbon": 10.96,
+      "resilience": 4.27
+    },
+    {
+      "project_id": "S09",
+      "technology": "Efficiency",
+      "jurisdiction": "ES",
+      "commitment_years": 2,
+      "capex": 47,
+      "npv": 28.43,
+      "carbon": 8.52,
+      "resilience": 2.55
+    },
+    {
+      "project_id": "S10",
+      "technology": "Wind",
+      "jurisdiction": "DE",
+      "commitment_years": 11,
+      "capex": 83,
+      "npv": 67.96,
+      "carbon": 15.54,
+      "resilience": 7.62
+    },
+    {
+      "project_id": "S11",
+      "technology": "PPA",
+      "jurisdiction": "FR",
+      "commitment_years": 8,
+      "capex": 50,
+      "npv": 26.36,
+      "carbon": 5.57,
+      "resilience": 2.77
+    },
+    {
+      "project_id": "S12",
+      "technology": "Demand response",
+      "jurisdiction": "IT",
+      "commitment_years": 9,
+      "capex": 46,
+      "npv": 29.14,
+      "carbon": 6.11,
+      "resilience": 4.61
+    },
+    {
+      "project_id": "S13",
+      "technology": "Solar",
+      "jurisdiction": "DE",
+      "commitment_years": 7,
+      "capex": 70,
+      "npv": 52.3,
+      "carbon": 7.11,
+      "resilience": 4.73
+    },
+    {
+      "project_id": "S14",
+      "technology": "Battery",
+      "jurisdiction": "ES",
+      "commitment_years": 3,
+      "capex": 84,
+      "npv": 47.24,
+      "carbon": 15.99,
+      "resilience": 8.96
+    },
+    {
+      "project_id": "S15",
+      "technology": "Efficiency",
+      "jurisdiction": "FR",
+      "commitment_years": 15,
+      "capex": 30,
+      "npv": 14.62,
+      "carbon": 5.03,
+      "resilience": 1.8
+    }
+  ]
+}
